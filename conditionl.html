@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional.html</title>
+</head>
+<body>
+    <script>
+        // array
+        let students = ["Henry", "David" , "Keyziah, Jack", "Bless"]
+        for (let i= 2; i < students.length; i++) {
+            console.log(students[i]);
+            document.write(students[i] + "<br>");
+        }
+
+        if (students[0] == "Henry") {
+            console.log("The first student is Henry");
+            document.write("The first student is Henry<br>");
+        } else {
+            console.log("The first student is not Henry");
+            document.write("The first student is not Henry<br>");
+        }
+        
+        // if else, else if statement
+        if (students.length > 3){
+            console.log("There are more students in the array.");
+            document.write("There are more than 3 students in the array.<br>")
+        } else if (students.length == 2) {
+            document.write("there are exactly 2 students in the array.<br>")
+        }
+        else{
+            console.log("There are less than 3 students in the array.");
+            document.write("There are less than 3 students in the array.<br>")
+        }
+    </script>
+    
+</body>
+</html> 

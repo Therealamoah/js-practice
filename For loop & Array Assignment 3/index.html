@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop & Array</title>
+</head>
+<body>
+    <h1>For Loop & Array</h1>
+    <script>
+        // 1. Number Analyzer
+function numberAnalyzer(numbers) {
+    let largest = numbers[0];
+    let smallest = numbers[0];
+    let sum = 0;
+    // For loop to iterate through the array
+    for (let i = 0; i < numbers.length; i++) {
+        // Finding largest Number
+        if (numbers[i] > largest) {
+            largest = numbers[i];
+        }
+        // Finding smaller Number
+        if (numbers[i] < smallest) {
+            smallest = numbers[i];
+        }
+        // Calculating for sum
+        sum += numbers[i];
+    }
+// Calculating for average
+    let average = sum / numbers.length;
+    console.log("Largest:", largest);
+    console.log("Smallest:", smallest);
+    console.log("Sum:", sum);
+    console.log("Average:", average);
+}
+numberAnalyzer([5, 10, 20, 2, 7]);
+
+// 2. Multiplication Table generator
+multiplication:
+number = prompt ("");
+   for(i = 1; i<=12; i++){
+   // multiplication();
+   console.log(`${number} x ${i} = ${number * i}`);
+}
+
+// 3. Even and odd sorter
+let array = [1, 2, 3, 4, 5, 6];
+for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+        console.log(array[i] + " is even");
+    } else {
+        console.log(array[i] + " is odd");
+    }
+}
+// // 4.Shopping Cart System
+let products = ["Apple", "Banana", "Orange", "Grapes"];
+let prices = [1.2, 0.5, 0.8, 2.0];
+let cart = [];
+let cartPrices = [];
+function addToCart(items,price) {
+    cart.push (items);
+    cartPrices.push(price);
+}
+function totalPrice() {
+    let total = 0;
+    for (let i = 0; i < cartPrices.length; i++) {
+        total += cartPrices[i];
+    }
+    return total;
+}
+// Adding items to the cart
+addToCart("Apple", 1.2);
+addToCart("Banana", 0.5);
+// Console log the cart and total price
+console.log("Cart:", cart);
+console.log("Total Price:", totalPrice());
+
+// 5. Reverse an Array (Manually)
+let arr = [2,9,3,5,4];
+for (let i = 0; i < arr.length / 2; i++) {
+    let temp = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = temp;
+}
+console.log(arr);
+
+// 6. FizzBuzz with Arrays
+function FizzBuzz(n) {
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
+
+}
+FizzBuzz(14);
+
+//  7. Basic Student Grade System
+let scores = [95, 82, 67, 74, 89, 100, 58];
+function studentScores(scores) {
+    let highest = scores[0];
+    let lowest = scores[0];
+    let sum = 0;
+    // For loop to iterate through the scores array
+    for (let i = 0; i < scores.length; i++) {
+        let score = scores[i];
+        // Checking for higest score 
+        if (score > highest) {
+            highest = score;
+        }
+        // Checking for lowest score
+        if (score < lowest) {
+            lowest = score;
+        }
+        // Adding to sum
+        sum += score;
+        // Assigning grades
+        let grade;
+        if (score >= 90) {
+            grade = "A";
+        } else if (score >= 80) {
+            grade = "B";
+        } else if (score >= 70) {
+            grade = "C";
+        } else {
+            grade = "Fail";
+        }
+
+        console.log(`Score: ${score}, Grade: ${grade}`);
+    }
+
+    // Calculating for the average
+    let average = sum / scores.length;
+// console.log
+    console.log("Highest Score:", highest);
+    console.log("Lowest Score:", lowest);
+    console.log("Average Score:", average.toFixed(2)); 
+}
+// 3. Calling for the function
+studentScores(scores);
+
+// 8. Word Counter
+function wordCounter(sentence) {
+    sentence = sentence.toLowerCase();
+    let words = sentence.split(" ");
+    let count = {};
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        if (count[word]) {
+            count[word]++;
+        } else {
+            count[word] = 1;
+        }
+    }
+    return count;
+}
+let results = wordCounter("I'm a student and i am learning JavaScript. I am a student.");
+console.log(results);
+
+// 9. ATM MACHINE SIMULATION
+function atmMachine(balance, withdrawal) {
+    // Loop to check for balance
+    for (let i = 0; i < 1; i++) {
+        if (withdrawal > balance) {
+            balance -= withdrawal;
+            console.log("Withdwal sucessful.");
+            console.log("New Balance: " + balance);
+        } else {
+            console.log ("Error: Insufficient balance.");
+        }
+            
+        }
+    }
+   atmMachine(200, 350);
+   atmMachine(140, 200);
+
+//    10.Password Generator
+function generatePassword(n) {
+    let characters = "A,B,C,D,E,F,G,H,I,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#,!,%,$,1,2,3,4,5,6";
+    let password = "";
+    for (let i = 0; i < n; i++) {
+        let randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+    console.log(password);
+    
+
+}
+generatePassword(10);
+   
+    </script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
